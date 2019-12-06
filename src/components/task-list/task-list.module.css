@@ -1,0 +1,8 @@
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list div+div {
+    margin-top: 0.6rem;
+}
