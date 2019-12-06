@@ -1,0 +1,20 @@
+.field {
+    min-width: 12rem;
+    height: 3.2rem;
+    max-height: 3.2rem;
+    background-color: #DDDDDD;
+    outline: none;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0rem 0.6rem;
+    line-height: 0rem;
+}
+
+.field:focus{
+    background-color: #d4d4d4;
+    box-shadow: 0rem 0.2rem 0.4rem rgba(212, 212, 212, 0.45);
+}
+
+.field::placeholder {
+    color: #686868;
+}
