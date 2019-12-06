@@ -1,8 +1,5 @@
-.list {
-    display: flex;
-    flex-direction: column;
-}
-
-.list div+div {
-    margin-top: 0.6rem;
+.wrapper {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 0.6rem;
 }

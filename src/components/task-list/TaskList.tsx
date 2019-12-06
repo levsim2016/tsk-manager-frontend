@@ -9,7 +9,7 @@ export class TaskList extends React.PureComponent<ITaskListProps> {
         const { tasks } = this.props;
 
         return (
-            <Card className={styles.list}>
+            <Card className={styles.wrapper}>
                 {tasks.map(task => {
                     return (
                         <Checkbox
