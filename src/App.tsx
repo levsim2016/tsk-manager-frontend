@@ -1,14 +1,12 @@
 import React from 'react';
-import styles from './app.module.css';
-import { Card, Checkbox } from './ui-components';
+import { TaskList } from './components/task-list/TaskList';
+
+import { mockedTasks } from './mocks/tasks';
 
 const App: React.FC = () => {
   return (
     <div>
-      <Card className={styles.list}>
-        <Checkbox label="Hmm.." isChecked={true}></Checkbox>
-        <Checkbox label="Hmm.." isChecked={false}></Checkbox>
-      </Card>
+      <TaskList tasks={mockedTasks}></TaskList>
     </div>
   );
 }
