@@ -1,15 +1,10 @@
 import React from 'react';
-import { TaskList } from './components/task-list/TaskList';
 
-import { mockedTasks } from './mocks/tasks';
-import { AddTaskPanel } from './components/add-task-panel/AddTaskPanel';
+import { Layout } from './components/layout/Layout';
 
 const App: React.FC = () => {
   return (
-    <div>
-      <AddTaskPanel></AddTaskPanel>
-      <TaskList tasks={mockedTasks}></TaskList>
-    </div>
+    <Layout></Layout>
   );
 }
 
