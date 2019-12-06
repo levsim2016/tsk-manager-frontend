@@ -1,17 +1,32 @@
 .button {
     display: flex;
+    min-width: 8rem;
+    height: 3.2rem;
+    line-height: 0rem;
+    font-size: 1.2rem;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
     border-radius: 0.6rem;
-}
-
-.secondary {
+    background-color: #ffffff;
     color: #686868;
     border: 0.1rem solid #C8C8C8;
+    outline: none;
+    transition: 0.1s linear all;
+}
+
+.button:hover {
+    background-color: #f5f5f5;
 }
 
 .primary {
     color: #ffffff;
     border: 0.1rem solid #FD4646;
     background-color: #FD4646;
+}
+
+.primary:hover {
+    border: 0.1rem solid #ff3434;
+    background-color: #ff3434;
+    box-shadow: 0rem 0.2rem 0.4rem rgba(255, 52, 52, 0.45);
 }
