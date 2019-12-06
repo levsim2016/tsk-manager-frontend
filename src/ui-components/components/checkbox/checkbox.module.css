@@ -3,7 +3,7 @@
     align-items: center;
 }
 
-.mark {
+.marker {
     display: flex;
     width: 1.8rem;
     height: 1.8rem;
@@ -13,23 +13,27 @@
     border: 0.1rem solid #C8C8C8;
 }
 
-.mark img {
+.marker img {
     width: 1rem;
     opacity: 0;
     transition: 0.1s linear opacity;
-}
-
-.checked {
-    background-color: #FD4646;
-    border: 0.1rem solid #FD4646;
-}
-
-.checked img {
-    opacity: 1;
 }
 
 .label {
     margin-left: 0.6rem;
     vertical-align: middle;
     line-height: 0rem;
+}
+
+.checked .marker {
+    background-color: #FD4646;
+    border: 0.1rem solid #FD4646;
+}
+
+.checked .marker img {
+    opacity: 1;
+}
+
+.checked .label {
+    text-decoration: line-through;
 }
