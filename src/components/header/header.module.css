@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    padding: 0rem 1.2rem;
+    border-bottom: 0.1rem solid #C8C8C8;
+    user-select: none;
+}
+
+.logo {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+}
+
+.tagline {
+    color: #686868;
+    font-size: 1.6rem;
+    margin-left: 1.2rem;
+}
