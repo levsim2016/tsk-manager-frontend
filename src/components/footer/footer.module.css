@@ -1,0 +1,14 @@
+.footer {
+    padding: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #C8C8C8;
+}
+
+.footer a {
+    color: #d3d3d3;
+}
+
+.footer a:visited {
+    color: #be9c9c;
+}
