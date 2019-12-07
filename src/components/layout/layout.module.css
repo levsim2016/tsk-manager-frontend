@@ -1,4 +1,4 @@
-.layout{
+.layout {
     display: grid;
     height: 100%;
     grid-template-rows: auto 1fr auto;
@@ -8,8 +8,10 @@
 .wrapper {
     display: grid;
     width: 100%;
+    align-content: flex-start;
     row-gap: 2rem;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media screen and (min-width: 360px) {
