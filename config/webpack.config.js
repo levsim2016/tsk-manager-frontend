@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const path = require('path');
@@ -452,6 +452,7 @@ module.exports = function(webpackEnv) {
                 modules: {
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
+                localsConvention: 'camelCase'
               }),
             },
             // Opt-in support for SASS (using .scss or .sass extensions).

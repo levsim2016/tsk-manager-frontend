@@ -12,7 +12,7 @@ export class Layout extends React.PureComponent {
         return (
             <div className={styles.layout}>
                 <Header></Header>
-                <main className={styles.wrapper}>
+                <main className={styles.contentContainer}>
                     <AddTaskPanel></AddTaskPanel>
                     <TaskList tasks={mockedTasks}></TaskList>
                 </main>
