@@ -2,13 +2,17 @@ import { IAppState } from "../interfaces/IAppState";
 import { AnyAction } from "redux";
 import { IAddTaskAction } from "../actions/addTaskAction";
 import { ISetTasksAction } from "../actions/setTasksAction";
+import { IUpdateTaskStatusAction } from "../actions/updateTaskStatusAction";
 
 const initialState: IAppState = {
     tasks: [],
     selectedDay: new Date().getDate(),
 };
 
-type ActionUnion = IAddTaskAction | ISetTasksAction;
+type ActionUnion =
+    | IAddTaskAction
+    | ISetTasksAction
+    | IUpdateTaskStatusAction;
 
 export const appReducer = (
     state: IAppState = initialState,
@@ -31,6 +35,20 @@ export const appReducer = (
                         ...appAction.task
                     }
                 ]
+            }
+        case 'UPDATE_TASK_STATUS':
+            const taskToUpdateIndex = state.tasks.findIndex(task => {
+                return task.id === appAction.id;
+            });
+            const updatedTasks = [...state.tasks];
+            updatedTasks[taskToUpdateIndex] = {
+                ...updatedTasks[taskToUpdateIndex],
+                isDone: appAction.isDone,
+            }
+
+            return {
+                ...state,
+                tasks: updatedTasks
             }
         default:
             return state;
