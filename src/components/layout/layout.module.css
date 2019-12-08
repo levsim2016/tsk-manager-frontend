@@ -5,7 +5,7 @@
     row-gap: 4rem;
 }
 
-.wrapper {
+.content-container {
     display: grid;
     width: 100%;
     align-content: flex-start;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (min-width: 360px) {
-    .wrapper {
+    .content-container {
         max-width: 50rem;
     }
 }
