@@ -6,6 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { appReducer } from '../reducers/appReducer';
 import { fetchTasks } from '../effects/fetchTasksEffect';
 import { createTaskAsync } from '../effects/createTaskEffect';
+import { updateTaskStatusAsync } from '../effects/updateTaskStatusEffect';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -13,6 +14,7 @@ const rootEffects = function* () {
     yield all([
         fetchTasks(),
         createTaskAsync(),
+        updateTaskStatusAsync(),
     ])
 }
 
