@@ -1,0 +1,20 @@
+.day-button {
+    display: flex;
+    width: 2.8rem;
+    height: 2.8rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.6rem;
+    background-color: #C8C8C8;
+    color: #686868;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.day-button:hover {
+    box-shadow: 0rem 0rem 0.2rem rgba(0, 0, 0, 0.25);
+}
+
+.selected {
+    background-color: #b3b3b3;
+}
