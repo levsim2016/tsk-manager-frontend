@@ -4,7 +4,15 @@ import checkboxMarker from '../../../assets/images/checkbox-marker.svg';
 
 import { ICheckboxProps } from '../../interfaces/ICheckboxProps';
 
+const autobind = require('autobind');
+
 export class Checkbox extends React.PureComponent<ICheckboxProps> {
+    @autobind
+    private handleClick(): void {
+        const reversedValue = this.props.isChecked ? false : true;
+        this.props.selectHandler(reversedValue);
+    }
+
     private getCheckboxClasses(): string {
         if (this.props.isChecked === true) {
             return `${styles.checkbox} ${styles.checked}`;
@@ -18,7 +26,7 @@ export class Checkbox extends React.PureComponent<ICheckboxProps> {
         const checkboxClasses = this.getCheckboxClasses();
 
         return (
-            <div className={checkboxClasses}>
+            <div className={checkboxClasses} onClick={this.handleClick}>
                 <div className={styles.marker}>
                     <img src={checkboxMarker} alt="Checkbox marker" />
                 </div>
