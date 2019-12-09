@@ -14,11 +14,11 @@ export class Button extends React.PureComponent<IButtonProps> {
     }
 
     public render(): ReactNode {
-        const { label } = this.props;
+        const { label, clickHandler } = this.props;
         const buttonClasses = this.getClasses();
 
         return (
-            <button className={buttonClasses}>
+            <button className={buttonClasses} onClick={clickHandler}>
                 {label}
             </button>
         );
