@@ -6,7 +6,7 @@ import { ITaskListProps } from '../../interfaces/ITaskListProps';
 
 export class TaskList extends React.PureComponent<ITaskListProps> {
     public render(): ReactNode {
-        const { tasks } = this.props;
+        const { tasks, selectTaskHandler } = this.props;
 
         return (
             <Card className={styles.wrapper}>
@@ -16,10 +16,11 @@ export class TaskList extends React.PureComponent<ITaskListProps> {
                             key={task.id}
                             label={task.summary}
                             isChecked={task.isDone}
+                            selectHandler={isSelected => selectTaskHandler(task.id, isSelected)}
                         ></Checkbox>
                     );
                 })}
-            </Card>
+            </Card >
         );
     }
 }
