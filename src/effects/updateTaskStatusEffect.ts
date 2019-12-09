@@ -3,9 +3,14 @@ import { IUpdateTaskStatusAction, updateTaskStatusAction } from '../actions/upda
 
 function* updateTaskStatus(action: IUpdateTaskStatusAction) {
     yield call(() => {
-        return fetch('http://localhost:3200/api/tasks/', {
+        return fetch(`http://localhost:3200/api/tasks/${action.id}`, {
             method: 'PUT',
-            body: JSON.stringify(action.isDone)
+            body: JSON.stringify({
+                isDone: action.isDone
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
     });
 
@@ -13,5 +18,5 @@ function* updateTaskStatus(action: IUpdateTaskStatusAction) {
 }
 
 export function* updateTaskStatusAsync() {
-    yield takeEvery('UPDATE_TASK_STATUS', updateTaskStatus);
+    yield takeEvery('REQUEST_UPDATE_TASK_STATUS', updateTaskStatus);
 }
