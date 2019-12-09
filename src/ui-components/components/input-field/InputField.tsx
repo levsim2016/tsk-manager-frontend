@@ -5,10 +5,21 @@ export class InputField extends React.PureComponent<
     InputHTMLAttributes<HTMLInputElement>
 > {
     public render(): ReactNode {
-        const { value, placeholder } = this.props;
+        const { 
+            value, 
+            placeholder, 
+            onInput, 
+            onChange 
+        } = this.props;
 
         return (
-            <input className={styles.field} value={value} placeholder={placeholder} />
+            <input 
+                className={styles.field} 
+                value={value} 
+                placeholder={placeholder} 
+                onInput={onInput} 
+                onChange={onChange} 
+            />
         );
     }
 }
