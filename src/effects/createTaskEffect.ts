@@ -1,12 +1,15 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { ITask } from '../interfaces/ITask';
-import { addTaskAction, IAddTaskAction } from '../actions/addTaskAction';
+import { addTaskAction } from '../actions/addTaskAction';
+import { IRequestAddTaskAction } from '../actions/requestAddTaskAction';
 
-function* createTask(action: IAddTaskAction) {
+function* createTask(action: IRequestAddTaskAction) {
     yield call(() => {
         return fetch('http://localhost:3200/api/tasks/', {
             method: 'POST',
-            body: JSON.stringify(action.task)
+            body: JSON.stringify(action.task),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
     });
 
@@ -14,5 +17,5 @@ function* createTask(action: IAddTaskAction) {
 }
 
 export function* createTaskAsync() {
-    yield takeEvery('ADD_TASK', createTask);
+    yield takeEvery('REQUEST_ADD_TASK', createTask);
 }
