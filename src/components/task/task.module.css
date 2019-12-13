@@ -1,0 +1,9 @@
+.task-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-layout span {
+    cursor: pointer;
+}
