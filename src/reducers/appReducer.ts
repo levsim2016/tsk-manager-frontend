@@ -3,6 +3,7 @@ import { AnyAction } from "redux";
 import { IAddTaskAction } from "../actions/addTaskAction";
 import { ISetTasksAction } from "../actions/setTasksAction";
 import { IUpdateTaskStatusAction } from "../actions/updateTaskStatusAction";
+import { IDeleteTaskAction } from "../actions/deleteTaskAction";
 
 const initialState: IAppState = {
     tasks: [],
@@ -12,7 +13,8 @@ const initialState: IAppState = {
 type ActionUnion =
     | IAddTaskAction
     | ISetTasksAction
-    | IUpdateTaskStatusAction;
+    | IUpdateTaskStatusAction
+    | IDeleteTaskAction;
 
 export const appReducer = (
     state: IAppState = initialState,
@@ -50,6 +52,12 @@ export const appReducer = (
                 ...state,
                 tasks: updatedTasks
             }
+        case 'DELETE_TASK':
+            return {
+                ...state,
+                tasks: state.tasks.filter(task => task.id !== appAction.id)
+            }
+
         default:
             return state;
     }
