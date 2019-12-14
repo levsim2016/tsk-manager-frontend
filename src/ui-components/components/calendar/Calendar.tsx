@@ -7,7 +7,7 @@ import { CalendarDayButton } from '../calendar-day-button/CalendarDayButton';
 
 export class Calendar extends React.PureComponent<ICalendarProps> {
     private renderDateButtons(): ReactNode {
-        const { selectedDate } = this.props;
+        const { selectedDate, selectDayHandler } = this.props;
 
         const currentYear = new Date().getFullYear();
         const month = selectedDate.getMonth();
@@ -27,6 +27,7 @@ export class Calendar extends React.PureComponent<ICalendarProps> {
                     <CalendarDayButton
                         numberOfDay={day}
                         isSelected={selectedDay === day}
+                        clickHandler={selectDayHandler}
                         key={day}
                     ></CalendarDayButton>
                 );
