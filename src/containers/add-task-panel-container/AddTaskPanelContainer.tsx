@@ -8,10 +8,17 @@ import { ITask } from '../../interfaces/ITask';
 import { Dispatch } from 'redux';
 import { IAddTaskPanelContainerState } from '../../interfaces/IAddTaskPanelContainerState';
 import { requestAddTaskAction } from '../../actions/requestAddTaskAction';
+import { IAppState } from '../../interfaces/IAppState';
 
 const autobind = require('autobind');
 
-const mapDispatchToProps = (dispatch: Dispatch): IAddTaskPanelContainerProps => {
+const mapStateToProps = (state: IAppState) => {
+    return {
+        selectedDate: state.currentDate
+    }
+}
+
+const mapDispatchToProps = (dispatch: Dispatch) => {
     return {
         addTask: (newTask: ITask) => dispatch(requestAddTaskAction(newTask)),
     }
@@ -19,7 +26,7 @@ const mapDispatchToProps = (dispatch: Dispatch): IAddTaskPanelContainerProps => 
 
 class SubscribedAddTaskPanel extends React.Component<
     IAddTaskPanelContainerProps, IAddTaskPanelContainerState
-> {
+    > {
     constructor(props: IAddTaskPanelContainerProps) {
         super(props);
         this.state = {
@@ -40,7 +47,7 @@ class SubscribedAddTaskPanel extends React.Component<
             id: uuid.v4(),
             summary: this.state.enteredSummary,
             isDone: false,
-            date: new Date(),
+            date: this.props.selectedDate,
         });
 
         this.setState({
@@ -59,4 +66,7 @@ class SubscribedAddTaskPanel extends React.Component<
     }
 }
 
-export const AddTaskPanelContainer = connect(null, mapDispatchToProps)(SubscribedAddTaskPanel);
+export const AddTaskPanelContainer = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(SubscribedAddTaskPanel);

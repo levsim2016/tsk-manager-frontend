@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import { TaskList } from '../../components/task-list/TaskList';
 import { IAppState } from '../../interfaces/IAppState';
 import { ITaskListContainerProps } from '../../interfaces/ITaskListContainerProps';
+import { getFilteredTasksByDay } from '../../selectors/getFilteredTasksByDay';
 
 const mapStateToProps = (state: IAppState) => {
     return {
-        tasks: state.tasks,
+        tasks: getFilteredTasksByDay(state.tasks, state.currentDate),
     };
 };
 
