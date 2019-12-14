@@ -4,17 +4,19 @@ import { IAddTaskAction } from "../actions/addTaskAction";
 import { ISetTasksAction } from "../actions/setTasksAction";
 import { IUpdateTaskStatusAction } from "../actions/updateTaskStatusAction";
 import { IDeleteTaskAction } from "../actions/deleteTaskAction";
+import { IChangeSelectedDateAction } from "../actions/changeSelectedDateAction";
 
 const initialState: IAppState = {
     tasks: [],
-    selectedDay: new Date().getDate(),
+    currentDate: new Date(),
 };
 
 type ActionUnion =
     | IAddTaskAction
     | ISetTasksAction
     | IUpdateTaskStatusAction
-    | IDeleteTaskAction;
+    | IDeleteTaskAction
+    | IChangeSelectedDateAction;
 
 export const appReducer = (
     state: IAppState = initialState,
@@ -56,6 +58,12 @@ export const appReducer = (
             return {
                 ...state,
                 tasks: state.tasks.filter(task => task.id !== appAction.id)
+            }
+
+        case 'CHANGE_SELECTED_DATE':
+            return {
+                ...state,
+                currentDate: appAction.selectedDate,
             }
 
         default:

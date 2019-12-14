@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react";
 
 export interface ICalendarProps extends HTMLAttributes<HTMLDivElement> {
-    month: number;
-    selectedDay: number;
+    selectedDate: Date;
+    selectDayHandler: (newDate: Date) => void;
 }
