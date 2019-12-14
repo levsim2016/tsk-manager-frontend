@@ -7,7 +7,7 @@ import { IDeleteTaskAction } from "../actions/deleteTaskAction";
 
 const initialState: IAppState = {
     tasks: [],
-    selectedDay: new Date().getDate(),
+    currentDate: new Date(),
 };
 
 type ActionUnion =
