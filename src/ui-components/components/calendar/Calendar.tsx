@@ -6,18 +6,18 @@ import { ICalendarProps } from '../../interfaces/ICalendarProps';
 import { CalendarDayButton } from '../calendar-day-button/CalendarDayButton';
 
 export class Calendar extends React.PureComponent<ICalendarProps> {
-    private renderDates(): ReactNode {
+    private renderDateButtons(): ReactNode {
+        const { selectedDate } = this.props;
+
         const currentYear = new Date().getFullYear();
-        const month = this.props.month;
+        const month = selectedDate.getMonth();
 
         const timestampOfMonth = new Date(currentYear, month, 1).getTime();
         const timestampOfNextMonth = new Date(currentYear, month + 1, 0).getTime();
         const differenceInMs = timestampOfNextMonth - timestampOfMonth;
 
         const numberOfDays = new Date(differenceInMs).getDate();
-        console.log(numberOfDays);
-
-        const selectedDay = this.props.selectedDay;
+        const selectedDay = selectedDate.getDate();
 
         return new Array(numberOfDays)
             .fill(0)
@@ -34,7 +34,9 @@ export class Calendar extends React.PureComponent<ICalendarProps> {
     }
 
     private getMonthName(): string {
-        const { month } = this.props;
+        const { selectedDate } = this.props;
+        const month = selectedDate.getMonth();
+
         const currentDate = new Date();
         const currentYear = currentDate.getFullYear();
 
@@ -57,7 +59,7 @@ export class Calendar extends React.PureComponent<ICalendarProps> {
     public render(): ReactNode {
         const calendarClasses = this.getClasses();
         const monthName = this.getMonthName();
-        const renderedDayButtons = this.renderDates();
+        const renderedDayButtons = this.renderDateButtons();
 
         return (
             <Card className={calendarClasses}>
