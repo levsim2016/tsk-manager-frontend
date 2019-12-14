@@ -7,6 +7,7 @@ import { appReducer } from '../reducers/appReducer';
 import { fetchTasks } from '../effects/fetchTasksEffect';
 import { createTaskAsync } from '../effects/createTaskEffect';
 import { updateTaskStatusAsync } from '../effects/updateTaskStatusEffect';
+import { deleteTaskAsync } from '../effects/deleteTaskEffect';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -15,6 +16,7 @@ const rootEffects = function* () {
         fetchTasks(),
         createTaskAsync(),
         updateTaskStatusAsync(),
+        deleteTaskAsync(),
     ])
 }
 
