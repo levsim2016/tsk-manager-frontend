@@ -5,12 +5,14 @@ export class Header extends React.PureComponent {
     public render(): ReactNode {
         return (
             <header className={styles.header}>
-                <span className={styles.logo}>
-                    Tsk
-                </span>
-                <span className={styles.tagline}>
-                    minimal task manager
-                </span>
+                <div className={styles.innerWrapper}>
+                    <span className={styles.logo}>
+                        Tsk
+                    </span>
+                    <span className={styles.tagline}>
+                        minimal task manager
+                    </span>
+                </div>
             </header>
         );
     }
