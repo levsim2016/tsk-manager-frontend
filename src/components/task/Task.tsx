@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import styles from './task.module.css';
+import deleteIcon from '../../assets/images/delete-icon.svg';
 
 import { Checkbox } from '../../ui-components';
 import { ITaskProps } from '../../interfaces/ITaskProps';
@@ -16,9 +17,12 @@ export class Task extends React.PureComponent<ITaskProps> {
                     isChecked={isDone}
                     selectHandler={isSelected => selectHandler(id, isSelected)}
                 ></Checkbox>
-                <span onClick={() => deleteHandler(id)}>
-                    Delete
-                </span>
+                <img
+                    className={styles.deleteIcon}
+                    src={deleteIcon} 
+                    alt='Delete' 
+                    onClick={() => deleteHandler(id)} 
+                />
             </div>
         );
     }
