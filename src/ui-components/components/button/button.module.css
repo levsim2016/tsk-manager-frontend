@@ -1,7 +1,7 @@
 .button {
     display: flex;
     min-width: 8rem;
-    height: 3.2rem;
+    height: 2.9rem;
     line-height: 0rem;
     font-size: 1.2rem;
     cursor: pointer;
@@ -9,7 +9,7 @@
     align-items: center;
     border-radius: 0.6rem;
     background-color: #ffffff;
-    color: #686868;
+    color: var(--secondary-text-color);
     border: 0.1rem solid #C8C8C8;
     outline: none;
     transition: 0.1s linear all;
@@ -25,8 +25,8 @@
 
 .primary {
     color: #ffffff;
-    border: 0.1rem solid #FD4646;
-    background-color: #FD4646;
+    border: 0.1rem solid var(--primary-border-color);
+    background-color: var(--primary-border-color);
 }
 
 .primary:hover {

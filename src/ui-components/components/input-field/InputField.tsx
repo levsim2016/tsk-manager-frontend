@@ -5,7 +5,7 @@ export class InputField extends React.PureComponent<
     InputHTMLAttributes<HTMLInputElement>
 > {
     public render(): ReactNode {
-        const { 
+        const {
             value, 
             placeholder, 
             onInput, 

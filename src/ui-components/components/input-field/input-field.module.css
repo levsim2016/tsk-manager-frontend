@@ -1,10 +1,11 @@
 .field {
     min-width: 12rem;
-    height: 3.2rem;
-    max-height: 3.2rem;
-    background-color: #DDDDDD;
+    height: 2.9rem;
+    max-height: 2.9rem;
+    background-color: #D8D8D8;
     outline: none;
     border: none;
+    color: var(--primary-text-color);
     border-radius: 0.6rem;
     padding: 0rem 0.6rem;
     line-height: 0rem;
@@ -16,5 +17,5 @@
 }
 
 .field::placeholder {
-    color: #686868;
+    color: var(--primary-text-color);
 }

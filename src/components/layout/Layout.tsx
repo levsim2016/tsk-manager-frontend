@@ -17,13 +17,15 @@ export class Layout extends React.PureComponent {
         return (
             <div className={styles.layout}>
                 <Header></Header>
-                <section>
-                    <CalendarContainer></CalendarContainer>
-                </section>
-                <main className={styles.contentContainer}>
-                    <AddTaskPanelContainer></AddTaskPanelContainer>
-                    <TaskListContainer></TaskListContainer>
-                </main>
+                <div className={styles.contentContainer}>
+                    <section>
+                        <CalendarContainer></CalendarContainer>
+                    </section>
+                    <main className={styles.taskListSection}>
+                        <AddTaskPanelContainer></AddTaskPanelContainer>
+                        <TaskListContainer></TaskListContainer>
+                    </main>
+                </div>
                 <Footer></Footer>
             </div>
         );

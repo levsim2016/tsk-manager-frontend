@@ -36,7 +36,7 @@ export class Calendar extends React.PureComponent<ICalendarProps> {
 
     private getMonthName(): string {
         const { selectedDate } = this.props;
-        const month = selectedDate.getMonth();
+        const month = selectedDate.getMonth() + 1;
 
         const currentDate = new Date();
         const currentYear = currentDate.getFullYear();

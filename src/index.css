@@ -1,3 +1,9 @@
+:root {
+  --primary-border-color: #FD4646;
+  --primary-text-color: #4D4D4D;
+  --secondary-text-color: #4C4C4C;
+}
+
 html {
   font-size: 62.5%;
   height: 100%;
@@ -14,6 +20,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root{
+#root {
   height: 100%;
 }

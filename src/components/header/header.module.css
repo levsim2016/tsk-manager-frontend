@@ -1,10 +1,17 @@
 .header {
-    display: flex;
-    align-items: center;
     height: 5rem;
+    color: var(--primary-text-color);
     padding: 0rem 1.2rem;
-    border-bottom: 0.1rem solid #C8C8C8;
+    border-bottom: 0.2rem solid var(--primary-border-color);
     user-select: none;
+}
+
+.inner-wrapper{
+    display: flex;
+    width: 100%;
+    height: inherit;
+    align-items: center;
+    margin: auto;
 }
 
 .logo {
@@ -13,7 +20,19 @@
 }
 
 .tagline {
-    color: #686868;
     font-size: 1.6rem;
     margin-left: 1.2rem;
+}
+
+@media screen and (min-width: 360px) {
+    .inner-wrapper {
+        max-width: 72.4rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .content-container {
+        width: 100%;
+        padding: 0rem 2rem;
+    }
 }
