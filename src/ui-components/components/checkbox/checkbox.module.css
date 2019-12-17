@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 0.6rem;
-    border: 0.1rem solid #C8C8C8;
+    border: 0.1rem solid var(--secondary-text-color);
 }
 
 .marker img {
@@ -20,20 +20,21 @@
     transition: 0.1s linear opacity;
 }
 
-.label {
-    margin-left: 0.6rem;
-    vertical-align: middle;
-    line-height: 0rem;
-    font-size: 1.2rem;
-}
-
 .checked .marker {
-    background-color: #FD4646;
-    border: 0.1rem solid #FD4646;
+    background-color: var(--primary-border-color);
+    border: 0.1rem solid var(--primary-border-color);
 }
 
 .checked .marker img {
     opacity: 1;
+}
+
+.label {
+    color: var(--primary-text-color);
+    margin-left: 0.6rem;
+    vertical-align: middle;
+    line-height: 0rem;
+    font-size: 1.2rem;
 }
 
 .checked .label {
