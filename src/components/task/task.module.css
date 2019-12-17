@@ -4,6 +4,10 @@
     align-items: center;
 }
 
-.task-layout span {
+.delete-icon {
     cursor: pointer;
+}
+
+.delete-icon:hover {
+    opacity: 0.85;
 }
